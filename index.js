@@ -1,3 +1,5 @@
+// Detecting Button Press
+
 // Length of returned array from querySelectorAll method
 var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
@@ -8,44 +10,56 @@ for (var index = 0; index < numberOfDrumButtons; index++) {
     [index].addEventListener("click", function () {
       var buttonInnerHTML = this.innerHTML;
 
-      switch (buttonInnerHTML) {
-        case "w":
-          var tom1 = new Audio("sounds/tom-1.mp3");
-          tom1.play();
-          break;
-
-        case "a":
-          var tom2 = new Audio("sounds/tom-2.mp3");
-          tom2.play();
-          break;
-
-        case "s":
-          var tom3 = new Audio("sounds/tom-3.mp3");
-          tom3.play();
-          break;
-
-        case "d":
-          var tom4 = new Audio("sounds/tom-4.mp3");
-          tom4.play();
-          break;
-
-        case "j":
-          var snare = new Audio("sounds/snare.mp3");
-          snare.play();
-          break;
-
-        case "k":
-          var crash = new Audio("sounds/crash.mp3");
-          crash.play();
-          break;
-
-        case "l":
-          var bass = new Audio("sounds/kick-bass.mp3");
-          bass.play();
-          break;
-
-        default:
-          console.log(buttonInnerHTML);
-      }
+      characterChecker(buttonInnerHTML);
     });
+}
+
+// Detecting Keyboard Press
+
+document.addEventListener("keypress", function (event) {
+  characterChecker(event.key);
+});
+
+// function that takes a character and checks it against the switch statement in order to play the correct sound, then call it inside of the event lister for keypress and inside of the event listener for the drum buttons
+
+function characterChecker(character) {
+  switch (character) {
+    case "w":
+      var tom1 = new Audio("sounds/tom-1.mp3");
+      tom1.play();
+      break;
+
+    case "a":
+      var tom2 = new Audio("sounds/tom-2.mp3");
+      tom2.play();
+      break;
+
+    case "s":
+      var tom3 = new Audio("sounds/tom-3.mp3");
+      tom3.play();
+      break;
+
+    case "d":
+      var tom4 = new Audio("sounds/tom-4.mp3");
+      tom4.play();
+      break;
+
+    case "j":
+      var snare = new Audio("sounds/snare.mp3");
+      snare.play();
+      break;
+
+    case "k":
+      var crash = new Audio("sounds/crash.mp3");
+      crash.play();
+      break;
+
+    case "l":
+      var bass = new Audio("sounds/kick-bass.mp3");
+      bass.play();
+      break;
+
+    default:
+      console.log(buttonInnerHTML);
+  }
 }
