@@ -8,6 +8,7 @@ for (var index = 0; index < numberOfDrumButtons; index++) {
     [index].addEventListener("click", function () {
       var buttonInnerHTML = this.innerHTML;
 
+      // Switch statment that takes in the clicked buttons innerHTML as it's expression and plays the corresponding sound
       switch (buttonInnerHTML) {
         case "w":
           var tom1 = new Audio("sounds/tom-1.mp3");
@@ -49,3 +50,7 @@ for (var index = 0; index < numberOfDrumButtons; index++) {
       }
     });
 }
+
+document.addEventListener("keypress", function (event) {
+  console.log(event);
+});
