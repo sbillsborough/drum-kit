@@ -53,4 +53,15 @@ for (var index = 0; index < numberOfDrumButtons; index++) {
 
 document.addEventListener("keypress", function (event) {
   console.log(event);
+  characterChecker(event.key);
 });
+
+// function that takes a character and checks it against the switch statement in order to play the correct sound, then call it inside of the event lister for keypress and inside of the event listener for the drum buttons
+
+function characterChecker(character) {
+  if (character === "w") {
+    console.log("you pressed w");
+  } else {
+    console.log("that's the wrong key");
+  }
+}
