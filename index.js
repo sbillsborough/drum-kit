@@ -73,4 +73,5 @@ function characterChecker(character) {
 function buttonAnimation(currentKey) {
   // assign current key to a variable
   var activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
 }
