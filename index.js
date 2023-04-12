@@ -68,4 +68,9 @@ function characterChecker(character) {
   }
 }
 
-function buttonAnimation(currentKey) {}
+// button animation function
+
+function buttonAnimation(currentKey) {
+  // assign current key to a variable
+  var activeButton = document.querySelector("." + currentKey);
+}
