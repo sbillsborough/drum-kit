@@ -11,6 +11,8 @@ for (var index = 0; index < numberOfDrumButtons; index++) {
       var buttonInnerHTML = this.innerHTML;
 
       characterChecker(buttonInnerHTML);
+
+      buttonAnimation(buttonInnerHTML);
     });
 }
 
@@ -18,9 +20,11 @@ for (var index = 0; index < numberOfDrumButtons; index++) {
 
 document.addEventListener("keypress", function (event) {
   characterChecker(event.key);
+
+  buttonAnimation(event.key);
 });
 
-// function that takes a character and checks it against the switch statement in order to play the correct sound, then call it inside of the event lister for keypress and inside of the event listener for the drum buttons
+// function that takes a character and checks it against the switch statement in order to play the correct sound, then call it inside of the event listener for keypress and inside of the event listener for the drum buttons
 
 function characterChecker(character) {
   switch (character) {
@@ -63,3 +67,5 @@ function characterChecker(character) {
       console.log(buttonInnerHTML);
   }
 }
+
+function buttonAnimation(currentKey) {}
