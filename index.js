@@ -77,5 +77,6 @@ function buttonAnimation(currentKey) {
   function removePressedClass() {
     activeButton.classList.remove("pressed");
   }
-  setTimeout(removePressedClass, 100);
+  var countDown = 1 / 10;
+  setTimeout(removePressedClass, countDown);
 }
